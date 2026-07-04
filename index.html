@@ -34,7 +34,6 @@ body {
     border: 3px solid rgba(0,0,0,0.6);
 }
 
-/* SHAPES */
 .shape1 {
     width: 120vw;
     height: 200px;
@@ -97,10 +96,13 @@ h2 {
     margin-bottom: 30px;
 }
 
+/* 🔥 LEFT ALIGN GLOBAL LAYOUT */
 section {
     padding: 80px 20px;
     position: relative;
     z-index: 2;
+    max-width: 1100px;
+    margin-left: 40px;   /* 👈 LEFT ALIGNED (not centered) */
 }
 
 /* HERO */
@@ -108,46 +110,43 @@ section {
     background: #ff003c;
     color: #000;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-}
-
-/* =========================
-   GLOBAL CONTAINER (IMPORTANT FIX)
-========================= */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
+    max-width: none;
+    margin-left: 0;
+    padding-left: 40px;
 }
 
 /* TIMELINE */
 .timeline {
     position: relative;
     margin-top: 40px;
+    padding-left: 40px;
 }
 
+/* 🔥 PERFECT CENTER LINE */
 .timeline::before {
     content: '';
     position: absolute;
-    left: 25px;
+    left: 12px; /* fixed anchor */
     top: 0;
     bottom: 0;
     width: 6px;
     background: #fff;
 }
 
+/* ITEM */
 .timeline-item {
     position: relative;
-    margin-left: 70px;
     margin-bottom: 50px;
 }
 
-/* 🔥 FIX: square NOT rotated */
+/* 🔥 PERFECT DOT ALIGNMENT */
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -40px;
+    left: 2px;   /* aligned to line center */
     top: 6px;
-    width: 14px;
-    height: 14px;
+    width: 18px;
+    height: 18px;
     background: #ff003c;
 }
 
@@ -158,15 +157,13 @@ section {
     gap: 40px;
 }
 
-/* 🔥 FIX: smaller card + proper centering */
+/* CARD (LEFT ALIGNED, NOT CENTERED) */
 .card {
     width: 100%;
-    max-width: 700px;     /* REDUCED */
-    margin: 0 auto;
+    max-width: 750px;
     background: #1a1a1a;
     border: 3px solid #ff003c;
     padding: 15px;
-    box-sizing: border-box;
 }
 
 /* VIDEO */
@@ -183,7 +180,6 @@ section {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    display: block;
 }
 
 /* META */
@@ -216,12 +212,13 @@ section {
 
 /* MOBILE */
 @media (max-width: 600px) {
-    .card {
-        max-width: 100%;
+    section {
+        margin-left: 15px;
+        padding: 50px 10px;
     }
 
-    section {
-        padding: 50px 15px;
+    .card {
+        max-width: 100%;
     }
 }
 </style>
@@ -237,17 +234,13 @@ section {
 </div>
 
 <section class="hero">
-    <div class="container">
-        <h1>Francesco Lomuscio</h1>
-        <p>
-            I am an Italian game developer who has studied Artificial Intelligence. I work with Unity as my primary game engine, developing projects across mobile (both iOS and Android), PC, and WebGL platforms. Alongside my professional role, I continue to pursue indie game development. I am currently working as a Unity Developer at Marshmallow Games.
-        </p>
-    </div>
+    <h1>Francesco Lomuscio</h1>
+    <p>
+        I am an Italian game developer who has studied Artificial Intelligence. I work with Unity as my primary game engine, developing projects across mobile (both iOS and Android), PC, and WebGL platforms. Alongside my professional role, I continue to pursue indie game development. I am currently working as a Unity Developer at Marshmallow Games.
+    </p>
 </section>
 
 <section>
-<div class="container">
-
 <h2>Work experience</h2>
 
 <div class="timeline">
@@ -263,16 +256,12 @@ section {
 
     <div class="timeline-item">
         <h3>2019 - 2022</h3>
-        <p>Master's Degree in AI @ University of Turin</p>
+        <p>MSc in AI @ University of Turin</p>
     </div>
-</div>
-
 </div>
 </section>
 
 <section>
-<div class="container">
-
 <h2>Projects</h2>
 
 <div class="projects">
@@ -302,12 +291,10 @@ section {
     </div>
 
 </div>
-
-</div>
 </section>
 
 <script>
-console.log("Timeline + card sizing fixed properly");
+console.log("Left aligned layout + timeline fixed alignment");
 </script>
 
 </body>
