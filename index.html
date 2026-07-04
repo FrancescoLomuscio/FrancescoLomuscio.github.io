@@ -109,19 +109,6 @@ section {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
-.hero-content {
-    max-width: 700px;
-}
-
-.hero h1 {
-    font-size: 3em;
-}
-
-.hero p {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
 /* TIMELINE */
 .timeline {
     position: relative;
@@ -159,28 +146,35 @@ section {
     color: #ff003c;
 }
 
-/* PROJECTS */
+/* =========================
+   GRID SYSTEM (FIX CORE)
+========================= */
+
 .projects {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr; /* SINGLE COLUMN ALWAYS SAFE */
     gap: 40px;
 }
 
+/* CARD */
 .card {
     width: 100%;
+    min-width: 0; /* IMPORTANT: prevents overflow bugs */
     background: #1a1a1a;
     border: 3px solid #ff003c;
     padding: 15px;
+    box-sizing: border-box;
 }
 
-/* SAFE 16:9 VIDEO */
+/* 16:9 SAFE WRAPPER */
 .video-wrapper {
     width: 100%;
     aspect-ratio: 16 / 9;
-    max-height: 60vh;
-    border: 2px solid #000;
+    max-width: 100%;
     overflow: hidden;
+    border: 2px solid #000;
     margin-bottom: 15px;
+    background: black;
 }
 
 .video-wrapper video {
@@ -220,8 +214,8 @@ section {
 
 /* MOBILE */
 @media (max-width: 600px) {
-    .hero h1 {
-        font-size: 2em;
+    section {
+        padding: 50px 15px;
     }
 }
 </style>
@@ -239,13 +233,10 @@ section {
 
 <!-- HERO -->
 <section class="hero">
-    <div class="hero-content">
-        <h1>Francesco Lomuscio</h1>
-        <p>
-            I am an Italian game developer who has studied Artificial Intelligence. I work with Unity as my primary game engine, developing projects across mobile (both iOS and Android),
-             PC, and WebGL platforms. Alongside my professional role, I continue to pursue indie game development. I am currently working as a Unity Developer at Marshmallow Games.
-        </p>
-    </div>
+    <h1>Francesco Lomuscio</h1>
+    <p>
+        I am an Italian game developer who has studied Artificial Intelligence. I work with Unity as my primary game engine, developing projects across mobile (both iOS and Android), PC, and WebGL platforms. Alongside my professional role, I continue to pursue indie game development. I am currently working as a Unity Developer at Marshmallow Games.
+    </p>
 </section>
 
 <!-- TIMELINE -->
@@ -257,15 +248,13 @@ section {
         <h3>2025 - Today</h3>
         <p>Unity developer @ Marshmallow Games</p>
     </div>
-
     <div class="timeline-item">
         <h3>2022 - 2025</h3>
         <p>AI Developer @ EY Technology Solutions</p>
     </div>
-
     <div class="timeline-item">
         <h3>2019 - 2022</h3>
-        <p>Master's Degree in Artificial Intelligence @ University of Turin</p>
+        <p>Master's Degree in AI @ University of Turin</p>
     </div>
 </div>
 </section>
@@ -304,7 +293,7 @@ section {
 </section>
 
 <script>
-console.log("Title updated + full file delivered");
+console.log("Grid layout fixed - no overflow guaranteed");
 </script>
 
 </body>
