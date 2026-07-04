@@ -14,7 +14,7 @@ body {
     overflow-x: hidden;
 }
 
-/* BACKGROUND */
+/* BACKGROUND (unchanged) */
 .bg-container {
     position: fixed;
     inset: 0;
@@ -61,7 +61,6 @@ body {
     transform: rotate(-8deg);
 }
 
-/* TEXTURE */
 .texture {
     position: absolute;
     inset: 0;
@@ -96,13 +95,12 @@ h2 {
     margin-bottom: 30px;
 }
 
-/* 🔥 LEFT ALIGN GLOBAL LAYOUT */
 section {
     padding: 80px 20px;
     position: relative;
     z-index: 2;
     max-width: 1100px;
-    margin-left: 40px;   /* 👈 LEFT ALIGNED (not centered) */
+    margin-left: 40px;
 }
 
 /* HERO */
@@ -110,23 +108,24 @@ section {
     background: #ff003c;
     color: #000;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    max-width: none;
     margin-left: 0;
-    padding-left: 40px;
 }
 
-/* TIMELINE */
+/* =========================
+   TIMELINE CENTER CROSS FIX
+========================= */
+
 .timeline {
     position: relative;
     margin-top: 40px;
-    padding-left: 40px;
+    padding-left: 60px;
 }
 
-/* 🔥 PERFECT CENTER LINE */
+/* 🔥 LINE PASSES THROUGH CENTER OF SQUARES */
 .timeline::before {
     content: '';
     position: absolute;
-    left: 12px; /* fixed anchor */
+    left: 18px;   /* centered on square */
     top: 0;
     bottom: 0;
     width: 6px;
@@ -137,17 +136,19 @@ section {
 .timeline-item {
     position: relative;
     margin-bottom: 50px;
+    padding-left: 40px;
 }
 
-/* 🔥 PERFECT DOT ALIGNMENT */
+/* 🔥 SQUARE WITH LINE CROSSING CENTER */
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: 2px;   /* aligned to line center */
-    top: 6px;
-    width: 18px;
-    height: 18px;
+    left: 0;
+    top: 8px;
+    width: 22px;
+    height: 22px;
     background: #ff003c;
+    border: 2px solid #0d0d0d;
 }
 
 /* PROJECTS */
@@ -157,7 +158,7 @@ section {
     gap: 40px;
 }
 
-/* CARD (LEFT ALIGNED, NOT CENTERED) */
+/* CARD */
 .card {
     width: 100%;
     max-width: 750px;
@@ -182,18 +183,6 @@ section {
     object-fit: contain;
 }
 
-/* META */
-.meta-block {
-    margin-top: 10px;
-}
-
-.meta-title {
-    font-size: 0.8em;
-    text-transform: uppercase;
-    opacity: 0.7;
-    margin-bottom: 5px;
-}
-
 /* TAGS */
 .tag {
     display: inline-block;
@@ -208,18 +197,6 @@ section {
 
 .tag.secondary {
     background: #fff;
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-    section {
-        margin-left: 15px;
-        padding: 50px 10px;
-    }
-
-    .card {
-        max-width: 100%;
-    }
 }
 </style>
 </head>
@@ -292,10 +269,6 @@ section {
 
 </div>
 </section>
-
-<script>
-console.log("Left aligned layout + timeline fixed alignment");
-</script>
 
 </body>
 </html>
