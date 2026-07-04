@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Dev Portfolio</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0d0d0d;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* === BACKGROUND === */
+.bg-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* SHAPES */
+.bg-shape {
+    position: absolute;
+    opacity: 0.12; /* MOLTO PIÙ LEGGERO */
+}
+
+/* bordo stile cell shading (più sottile e soft) */
+.bg-shape::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 3px solid rgba(0,0,0,0.6);
+}
+
+/* SHAPES POSIZIONE */
+.shape1 {
+    width: 120vw;
+    height: 200px;
+    background: #ff003c;
+    top: 10%;
+    left: -20%;
+    transform: rotate(-12deg);
+}
+
+.shape2 {
+    width: 140vw;
+    height: 250px;
+    background: #ffffff;
+    top: 50%;
+    left: -30%;
+    transform: rotate(10deg);
+}
+
+.shape3 {
+    width: 120vw;
+    height: 180px;
+    background: #ff003c;
+    bottom: 10%;
+    left: -20%;
+    transform: rotate(-8deg);
+}
+
+/* TEXTURE SOPRA I RETTANGOLI */
+.texture {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background-image:
+        radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        repeating-linear-gradient(
+            45deg,
+            rgba(255,255,255,0.015),
+            rgba(255,255,255,0.015) 2px,
+            transparent 2px,
+            transparent 6px
+        );
+
+    background-size: 3px 3px, 8px 8px;
+}
+
+/* === TYPO === */
+h1, h2, h3 {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2 {
+    display: inline-block;
+    background: #fff;
+    color: #000;
+    padding: 6px 12px;
+    transform: skew(-10deg);
+    margin-bottom: 30px;
+}
+
+/* === SECTIONS === */
+section {
+    padding: 80px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* HERO */
+.hero {
+    background: #ff003c;
+    color: #000;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 3em;
+}
+
+.hero p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* TIMELINE */
+.timeline {
+    position: relative;
+    margin-top: 40px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: #fff;
+}
+
+.timeline-item {
+    position: relative;
+    margin-left: 70px;
+    margin-bottom: 50px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -45px;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    background: #ff003c;
+    transform: rotate(45deg);
+}
+
+.timeline-item h3 {
+    color: #ff003c;
+}
+
+/* PROJECTS */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* CARD */
+.card {
+    background: #1a1a1a;
+    border: 3px solid #ff003c;
+    padding: 15px;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card video {
+    width: 100%;
+    border: 2px solid #000;
+    margin-bottom: 10px;
+}
+
+/* TAGS */
+.tag {
+    display: inline-block;
+    background: #ff003c;
+    color: #000;
+    padding: 4px 10px;
+    margin: 3px;
+    font-size: 0.75em;
+    font-weight: bold;
+    transform: skew(-10deg);
+}
+
+.tag.secondary {
+    background: #fff;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+<div class="bg-container">
+    <div class="bg-shape shape1"></div>
+    <div class="bg-shape shape2"></div>
+    <div class="bg-shape shape3"></div>
+    <div class="texture"></div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Nome Cognome</h1>
+        <p>
+            Game Developer focalizzato su gameplay e UI design.
+            Creo esperienze interattive con forte identità visiva.
+        </p>
+    </div>
+</section>
+
+<!-- TIMELINE -->
+<section>
+    <h2>Esperienza</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <h3>2024 - Oggi</h3>
+            <p>Game Developer @ Studio XYZ</p>
+        </div>
+        <div class="timeline-item">
+            <h3>2022 - 2024</h3>
+            <p>Junior Developer @ Indie Team</p>
+        </div>
+        <div class="timeline-item">
+            <h3>2020 - 2022</h3>
+            <p>Computer Science Student</p>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section>
+    <h2>Progetti</h2>
+    <div class="projects">
+
+        <div class="card">
+            <h3>Project One</h3>
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+            </video>
+            <div>
+                <span class="tag">Unity</span>
+                <span class="tag">C#</span>
+                <span class="tag secondary">Gameplay</span>
+                <span class="tag secondary">UI</span>
+            </div>
+            <p>Action game con combat system veloce e responsivo.</p>
+        </div>
+
+        <div class="card">
+            <h3>Project Two</h3>
+            <video controls>
+                <source src="video2.mp4" type="video/mp4">
+            </video>
+            <div>
+                <span class="tag">Unreal</span>
+                <span class="tag">Blueprint</span>
+                <span class="tag secondary">Level Design</span>
+            </div>
+            <p>Prototype focalizzato su level design e narrativa.</p>
+        </div>
+
+    </div>
+</section>
+
+<script>
+console.log("Background refined and subtle");
+</script>
+
+</body>
+</html>
