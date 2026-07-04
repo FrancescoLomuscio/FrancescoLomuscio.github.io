@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Game Dev Portfolio</title>
+<title>Francesco Lomuscio Portfolio</title>
 
 <style>
 body {
@@ -22,7 +22,6 @@ body {
     z-index: 0;
 }
 
-/* SHAPES */
 .bg-shape {
     position: absolute;
     opacity: 0.12;
@@ -97,13 +96,14 @@ h2 {
     margin-bottom: 30px;
 }
 
+/* === SECTIONS === */
 section {
     padding: 80px 20px;
     position: relative;
     z-index: 2;
 }
 
-/* HERO */
+/* HERO (UNCHANGED CONTENT) */
 .hero {
     background: #ff003c;
     color: #000;
@@ -160,14 +160,14 @@ section {
     color: #ff003c;
 }
 
-/* === PROJECT LIST (FULL WIDTH ROWS) === */
+/* === PROJECTS (FULL WIDTH ROWS) === */
 .projects {
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-/* === CARD FULL WIDTH === */
+/* CARD */
 .card {
     width: 100%;
     background: #1a1a1a;
@@ -175,7 +175,7 @@ section {
     padding: 15px;
 }
 
-/* === 16:9 VIDEO WRAPPER === */
+/* 16:9 VIDEO */
 .video-wrapper {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -190,17 +190,16 @@ section {
     object-fit: cover;
 }
 
-/* === META SECTIONS === */
+/* META */
 .meta-block {
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .meta-title {
-    font-weight: bold;
-    text-transform: uppercase;
     font-size: 0.8em;
+    text-transform: uppercase;
     opacity: 0.7;
-    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 /* TAGS */
@@ -238,101 +237,94 @@ section {
     <div class="texture"></div>
 </div>
 
-<!-- HERO -->
+<!-- HERO (UNCHANGED TEXT) -->
 <section class="hero">
     <div class="hero-content">
         <h1>Francesco Lomuscio</h1>
         <p>
-            Game Developer specialized in Unity development and AI systems.
-            I build cross-platform experiences for mobile, PC and WebGL, while continuing indie development.
+            I am an Italian game developer who has studied Artificial Intelligence. I work with Unity as my primary game engine, developing projects across mobile (both iOS and Android),
+             PC, and WebGL platforms. Alongside my professional role, I continue to pursue indie game development. I am currently working as a Unity Developer at Marshmallow Games.
         </p>
     </div>
 </section>
 
-<!-- TIMELINE -->
+<!-- TIMELINE (UNCHANGED TEXT) -->
 <section>
-    <h2>Work Experience</h2>
-
+    <h2>Work experience</h2>
     <div class="timeline">
         <div class="timeline-item">
             <h3>2025 - Today</h3>
-            <p>Unity Developer @ Marshmallow Games</p>
+            <p>Unity developer @ Marshmallow Games</p>
         </div>
-
         <div class="timeline-item">
             <h3>2022 - 2025</h3>
             <p>AI Developer @ EY Technology Solutions</p>
         </div>
-
         <div class="timeline-item">
             <h3>2019 - 2022</h3>
-            <p>MSc in Artificial Intelligence @ University of Turin</p>
+            <p>Master's Degree in Artificial Intelligence and Information Systems "Pietro Torasso" @ University of Turin</p>
         </div>
     </div>
 </section>
 
 <!-- PROJECTS -->
 <section>
-    <h2>Projects</h2>
+<h2>Progetti</h2>
 
-    <div class="projects">
+<div class="projects">
 
-        <div class="card">
-            <h3>Project Name: Neon Combat Protocol</h3>
+    <div class="card">
+        <h3>Project One</h3>
 
-            <div class="video-wrapper">
-                <video controls>
-                    <source src="video1.mp4" type="video/mp4">
-                </video>
-            </div>
-
-            <div class="meta-block">
-                <div class="meta-title">Tools</div>
-                <span class="tag">Unity</span>
-                <span class="tag">C#</span>
-            </div>
-
-            <div class="meta-block">
-                <div class="meta-title">Ownership</div>
-                <span class="tag secondary">Gameplay</span>
-                <span class="tag secondary">UI</span>
-            </div>
-
-            <p>
-                Action-focused game featuring fast combat mechanics and responsive controls.
-            </p>
+        <div class="video-wrapper">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+            </video>
         </div>
 
-        <div class="card">
-            <h3>Project Name: Echo Level Prototype</h3>
-
-            <div class="video-wrapper">
-                <video controls>
-                    <source src="video2.mp4" type="video/mp4">
-                </video>
-            </div>
-
-            <div class="meta-block">
-                <div class="meta-title">Tools</div>
-                <span class="tag">Unreal Engine</span>
-                <span class="tag">Blueprint</span>
-            </div>
-
-            <div class="meta-block">
-                <div class="meta-title">Ownership</div>
-                <span class="tag secondary">Level Design</span>
-            </div>
-
-            <p>
-                Prototype focused on environmental storytelling and level design exploration.
-            </p>
+        <div class="meta-block">
+            <div class="meta-title">Tools</div>
+            <span class="tag">Unity</span>
+            <span class="tag">C#</span>
         </div>
 
+        <div class="meta-block">
+            <div class="meta-title">Ownership</div>
+            <span class="tag secondary">Gameplay</span>
+            <span class="tag secondary">UI</span>
+        </div>
+
+        <p>Action game con combat system veloce e responsivo.</p>
     </div>
+
+    <div class="card">
+        <h3>Project Two</h3>
+
+        <div class="video-wrapper">
+            <video controls>
+                <source src="video2.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="meta-block">
+            <div class="meta-title">Tools</div>
+            <span class="tag">Unreal</span>
+            <span class="tag">Blueprint</span>
+        </div>
+
+        <div class="meta-block">
+            <div class="meta-title">Ownership</div>
+            <span class="tag secondary">Level Design</span>
+        </div>
+
+        <p>Prototype focalizzato su level design e narrativa.</p>
+    </div>
+
+</div>
 </section>
 
 <script>
-console.log("Portfolio layout updated: full-width cards + structured metadata");
+console.log("Layout updated without modifying user content");
 </script>
 
 </body>
