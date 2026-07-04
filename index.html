@@ -142,39 +142,36 @@ section {
     transform: rotate(45deg);
 }
 
-.timeline-item h3 {
-    color: #ff003c;
-}
-
 /* =========================
-   GRID SYSTEM (FIX CORE)
+   PROJECT CARDS (FIXED SIZE)
 ========================= */
 
 .projects {
-    display: grid;
-    grid-template-columns: 1fr; /* SINGLE COLUMN ALWAYS SAFE */
+    display: flex;
+    flex-direction: column;
     gap: 40px;
 }
 
-/* CARD */
+/* CARD NOW SMALLER */
 .card {
     width: 100%;
-    min-width: 0; /* IMPORTANT: prevents overflow bugs */
+    max-width: 900px;      /* 🔥 KEY CHANGE */
+    margin: 0 auto;        /* center */
     background: #1a1a1a;
     border: 3px solid #ff003c;
     padding: 15px;
     box-sizing: border-box;
 }
 
-/* 16:9 SAFE WRAPPER */
+/* VIDEO ALSO CONSTRAINED */
 .video-wrapper {
     width: 100%;
+    max-width: 900px;      /* 🔥 matches card */
     aspect-ratio: 16 / 9;
-    max-width: 100%;
-    overflow: hidden;
+    margin: 0 auto 15px auto;
     border: 2px solid #000;
-    margin-bottom: 15px;
-    background: black;
+    overflow: hidden;
+    background: #000;
 }
 
 .video-wrapper video {
@@ -214,8 +211,12 @@ section {
 
 /* MOBILE */
 @media (max-width: 600px) {
-    section {
-        padding: 50px 15px;
+    .card {
+        max-width: 100%;
+    }
+
+    .video-wrapper {
+        max-width: 100%;
     }
 }
 </style>
@@ -293,7 +294,7 @@ section {
 </section>
 
 <script>
-console.log("Grid layout fixed - no overflow guaranteed");
+console.log("Cards constrained to improve video quality perception");
 </script>
 
 </body>
