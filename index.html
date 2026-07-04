@@ -100,8 +100,6 @@ section {
     padding: 80px 20px;
     position: relative;
     z-index: 2;
-    max-width: 1100px;
-    margin-left: 40px;
 }
 
 /* HERO */
@@ -109,20 +107,18 @@ section {
     background: #ff003c;
     color: #000;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    margin-left: 0;
 }
 
-/* TIMELINE (RESTORED STYLE) */
+/* TIMELINE */
 .timeline {
     position: relative;
     margin-top: 40px;
-    padding-left: 60px;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
-    left: 18px;
+    left: 25px;
     top: 0;
     bottom: 0;
     width: 6px;
@@ -131,43 +127,50 @@ section {
 
 .timeline-item {
     position: relative;
+    margin-left: 70px;
     margin-bottom: 50px;
 }
 
-/* 🔥 BACK TO ROTATED SQUARES */
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: 2px;
-    top: 6px;
+    left: -45px;
+    top: 5px;
     width: 18px;
     height: 18px;
     background: #ff003c;
     transform: rotate(45deg);
 }
 
-/* PROJECTS */
+/* =========================
+   PROJECT CARDS (FIXED SIZE)
+========================= */
+
 .projects {
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
+/* CARD NOW SMALLER */
 .card {
     width: 100%;
-    max-width: 750px;
+    max-width: 900px;      /* 🔥 KEY CHANGE */
+    margin: 0 auto;        /* center */
     background: #1a1a1a;
     border: 3px solid #ff003c;
     padding: 15px;
+    box-sizing: border-box;
 }
 
-/* VIDEO */
+/* VIDEO ALSO CONSTRAINED */
 .video-wrapper {
     width: 100%;
+    max-width: 900px;      /* 🔥 matches card */
     aspect-ratio: 16 / 9;
-    overflow: hidden;
+    margin: 0 auto 15px auto;
     border: 2px solid #000;
-    margin-bottom: 15px;
+    overflow: hidden;
     background: #000;
 }
 
@@ -175,6 +178,19 @@ section {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    display: block;
+}
+
+/* META */
+.meta-block {
+    margin-top: 10px;
+}
+
+.meta-title {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 5px;
 }
 
 /* TAGS */
@@ -192,11 +208,23 @@ section {
 .tag.secondary {
     background: #fff;
 }
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .card {
+        max-width: 100%;
+    }
+
+    .video-wrapper {
+        max-width: 100%;
+    }
+}
 </style>
 </head>
 
 <body>
 
+<!-- BACKGROUND -->
 <div class="bg-container">
     <div class="bg-shape shape1"></div>
     <div class="bg-shape shape2"></div>
@@ -204,6 +232,7 @@ section {
     <div class="texture"></div>
 </div>
 
+<!-- HERO -->
 <section class="hero">
     <h1>Francesco Lomuscio</h1>
     <p>
@@ -211,6 +240,7 @@ section {
     </p>
 </section>
 
+<!-- TIMELINE -->
 <section>
 <h2>Work experience</h2>
 
@@ -219,19 +249,18 @@ section {
         <h3>2025 - Today</h3>
         <p>Unity developer @ Marshmallow Games</p>
     </div>
-
     <div class="timeline-item">
         <h3>2022 - 2025</h3>
         <p>AI Developer @ EY Technology Solutions</p>
     </div>
-
     <div class="timeline-item">
         <h3>2019 - 2022</h3>
-        <p>MSc in AI @ University of Turin</p>
+        <p>Master's Degree in AI @ University of Turin</p>
     </div>
 </div>
 </section>
 
+<!-- PROJECTS -->
 <section>
 <h2>Projects</h2>
 
@@ -263,6 +292,10 @@ section {
 
 </div>
 </section>
+
+<script>
+console.log("Cards constrained to improve video quality perception");
+</script>
 
 </body>
 </html>
