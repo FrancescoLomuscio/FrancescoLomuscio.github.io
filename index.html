@@ -154,7 +154,7 @@ section {
 /* CARD NOW SMALLER */
 .card {
     width: 100%;
-    max-width: 600px;
+    max-width: 450px;
     background: #1a1a1a;
     border: 3px solid #ff003c;
     padding: 15px;
@@ -163,7 +163,7 @@ section {
 /* VIDEO ALSO CONSTRAINED */
 .video-wrapper {
     width: 100%;
-    max-width: 600px;      /* 🔥 matches card */
+    max-width: 450px;      /* 🔥 matches card */
     aspect-ratio: 16 / 9;
     margin: 0 auto 15px auto;
     border: 2px solid #000;
@@ -264,11 +264,11 @@ section {
 <div class="projects">
 
     <div class="card">
-        <h3>Project One</h3>
+        <h3>Spin & Spell</h3>
 
         <div class="video-wrapper">
             <video controls>
-                <source src="video1.mp4" type="video/mp4">
+                <source src="sal_final.mp4" type="video/mp4">
             </video>
         </div>
 
@@ -282,17 +282,24 @@ section {
             <div class="meta-title">Ownership</div>
             <span class="tag secondary">Gameplay</span>
             <span class="tag secondary">UI</span>
+            <span class="tag secondary">Infrastructure</span>
         </div>
 
-        <p>Action game con combat system veloce e responsivo.</p>
+        <div class="meta-block">
+            <div class="meta-title">Product</div>
+            <span>Smart Tales</span>
+        </div>
+
+        <div class="meta-block">
+            <div class="meta-title">Platforms</div>
+            <span>iOS, Android</span>
+        </div>
+
+        <p>Design and development of an educational mini-game within the Smart Tales app. I was responsible for designing and implementing the infrastructure for educational minigames focused on letters and words, ensuring scalability and reusability of the system. I implemented the gameplay according to the specifications outlined in the Game Design Document and developed the user interface in compliance with the provided design guidelines. Finally, I handled the deployment, release, and testing of the game within the Smart Tales environment, both in DEV and production (PROD).</p>
     </div>
 
 </div>
 </section>
-
-<script>
-console.log("Cards constrained to improve video quality perception");
-</script>
 
 </body>
 </html>
