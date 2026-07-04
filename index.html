@@ -34,6 +34,7 @@ body {
     border: 3px solid rgba(0,0,0,0.6);
 }
 
+/* SHAPES */
 .shape1 {
     width: 120vw;
     height: 200px;
@@ -109,6 +110,14 @@ section {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
+/* =========================
+   GLOBAL CONTAINER (IMPORTANT FIX)
+========================= */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
 /* TIMELINE */
 .timeline {
     position: relative;
@@ -131,46 +140,42 @@ section {
     margin-bottom: 50px;
 }
 
+/* 🔥 FIX: square NOT rotated */
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -45px;
-    top: 5px;
-    width: 18px;
-    height: 18px;
+    left: -40px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
     background: #ff003c;
-    transform: rotate(45deg);
 }
 
-/* =========================
-   PROJECT CARDS (FIXED SIZE)
-========================= */
-
+/* PROJECTS */
 .projects {
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-/* CARD NOW SMALLER */
+/* 🔥 FIX: smaller card + proper centering */
 .card {
     width: 100%;
-    max-width: 900px;      /* 🔥 KEY CHANGE */
-    margin: 0 auto;        /* center */
+    max-width: 700px;     /* REDUCED */
+    margin: 0 auto;
     background: #1a1a1a;
     border: 3px solid #ff003c;
     padding: 15px;
     box-sizing: border-box;
 }
 
-/* VIDEO ALSO CONSTRAINED */
+/* VIDEO */
 .video-wrapper {
     width: 100%;
-    max-width: 900px;      /* 🔥 matches card */
     aspect-ratio: 16 / 9;
-    margin: 0 auto 15px auto;
-    border: 2px solid #000;
     overflow: hidden;
+    border: 2px solid #000;
+    margin-bottom: 15px;
     background: #000;
 }
 
@@ -215,8 +220,8 @@ section {
         max-width: 100%;
     }
 
-    .video-wrapper {
-        max-width: 100%;
+    section {
+        padding: 50px 15px;
     }
 }
 </style>
@@ -224,7 +229,6 @@ section {
 
 <body>
 
-<!-- BACKGROUND -->
 <div class="bg-container">
     <div class="bg-shape shape1"></div>
     <div class="bg-shape shape2"></div>
@@ -232,16 +236,18 @@ section {
     <div class="texture"></div>
 </div>
 
-<!-- HERO -->
 <section class="hero">
-    <h1>Francesco Lomuscio</h1>
-    <p>
-        I am an Italian game developer who has studied Artificial Intelligence. I work with Unity as my primary game engine, developing projects across mobile (both iOS and Android), PC, and WebGL platforms. Alongside my professional role, I continue to pursue indie game development. I am currently working as a Unity Developer at Marshmallow Games.
-    </p>
+    <div class="container">
+        <h1>Francesco Lomuscio</h1>
+        <p>
+            I am an Italian game developer who has studied Artificial Intelligence. I work with Unity as my primary game engine, developing projects across mobile (both iOS and Android), PC, and WebGL platforms. Alongside my professional role, I continue to pursue indie game development. I am currently working as a Unity Developer at Marshmallow Games.
+        </p>
+    </div>
 </section>
 
-<!-- TIMELINE -->
 <section>
+<div class="container">
+
 <h2>Work experience</h2>
 
 <div class="timeline">
@@ -249,19 +255,24 @@ section {
         <h3>2025 - Today</h3>
         <p>Unity developer @ Marshmallow Games</p>
     </div>
+
     <div class="timeline-item">
         <h3>2022 - 2025</h3>
         <p>AI Developer @ EY Technology Solutions</p>
     </div>
+
     <div class="timeline-item">
         <h3>2019 - 2022</h3>
         <p>Master's Degree in AI @ University of Turin</p>
     </div>
 </div>
+
+</div>
 </section>
 
-<!-- PROJECTS -->
 <section>
+<div class="container">
+
 <h2>Projects</h2>
 
 <div class="projects">
@@ -291,10 +302,12 @@ section {
     </div>
 
 </div>
+
+</div>
 </section>
 
 <script>
-console.log("Cards constrained to improve video quality perception");
+console.log("Timeline + card sizing fixed properly");
 </script>
 
 </body>
