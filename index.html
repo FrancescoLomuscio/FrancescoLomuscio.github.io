@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,10 +25,9 @@ body {
 /* SHAPES */
 .bg-shape {
     position: absolute;
-    opacity: 0.12; /* MOLTO PIÙ LEGGERO */
+    opacity: 0.12;
 }
 
-/* bordo stile cell shading (più sottile e soft) */
 .bg-shape::after {
     content: '';
     position: absolute;
@@ -36,7 +35,6 @@ body {
     border: 3px solid rgba(0,0,0,0.6);
 }
 
-/* SHAPES POSIZIONE */
 .shape1 {
     width: 120vw;
     height: 200px;
@@ -64,7 +62,7 @@ body {
     transform: rotate(-8deg);
 }
 
-/* TEXTURE SOPRA I RETTANGOLI */
+/* TEXTURE */
 .texture {
     position: absolute;
     inset: 0;
@@ -99,7 +97,6 @@ h2 {
     margin-bottom: 30px;
 }
 
-/* === SECTIONS === */
 section {
     padding: 80px 20px;
     position: relative;
@@ -114,7 +111,7 @@ section {
 }
 
 .hero-content {
-    max-width: 600px;
+    max-width: 700px;
 }
 
 .hero h1 {
@@ -163,29 +160,47 @@ section {
     color: #ff003c;
 }
 
-/* PROJECTS */
+/* === PROJECT LIST (FULL WIDTH ROWS) === */
 .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
-/* CARD */
+/* === CARD FULL WIDTH === */
 .card {
+    width: 100%;
     background: #1a1a1a;
     border: 3px solid #ff003c;
     padding: 15px;
-    transition: 0.2s;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card video {
+/* === 16:9 VIDEO WRAPPER === */
+.video-wrapper {
     width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 15px;
     border: 2px solid #000;
+    overflow: hidden;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* === META SECTIONS === */
+.meta-block {
     margin-bottom: 10px;
+}
+
+.meta-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    opacity: 0.7;
+    margin-top: 10px;
 }
 
 /* TAGS */
@@ -226,70 +241,98 @@ section {
 <!-- HERO -->
 <section class="hero">
     <div class="hero-content">
-        <h1>Nome Cognome</h1>
+        <h1>Francesco Lomuscio</h1>
         <p>
-            Game Developer focalizzato su gameplay e UI design.
-            Creo esperienze interattive con forte identità visiva.
+            Game Developer specialized in Unity development and AI systems.
+            I build cross-platform experiences for mobile, PC and WebGL, while continuing indie development.
         </p>
     </div>
 </section>
 
 <!-- TIMELINE -->
 <section>
-    <h2>Esperienza</h2>
+    <h2>Work Experience</h2>
+
     <div class="timeline">
         <div class="timeline-item">
-            <h3>2024 - Oggi</h3>
-            <p>Game Developer @ Studio XYZ</p>
+            <h3>2025 - Today</h3>
+            <p>Unity Developer @ Marshmallow Games</p>
         </div>
+
         <div class="timeline-item">
-            <h3>2022 - 2024</h3>
-            <p>Junior Developer @ Indie Team</p>
+            <h3>2022 - 2025</h3>
+            <p>AI Developer @ EY Technology Solutions</p>
         </div>
+
         <div class="timeline-item">
-            <h3>2020 - 2022</h3>
-            <p>Computer Science Student</p>
+            <h3>2019 - 2022</h3>
+            <p>MSc in Artificial Intelligence @ University of Turin</p>
         </div>
     </div>
 </section>
 
 <!-- PROJECTS -->
 <section>
-    <h2>Progetti</h2>
+    <h2>Projects</h2>
+
     <div class="projects">
 
         <div class="card">
-            <h3>Project One</h3>
-            <video controls>
-                <source src="video1.mp4" type="video/mp4">
-            </video>
-            <div>
+            <h3>Project Name: Neon Combat Protocol</h3>
+
+            <div class="video-wrapper">
+                <video controls>
+                    <source src="video1.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="meta-block">
+                <div class="meta-title">Tools</div>
                 <span class="tag">Unity</span>
                 <span class="tag">C#</span>
+            </div>
+
+            <div class="meta-block">
+                <div class="meta-title">Ownership</div>
                 <span class="tag secondary">Gameplay</span>
                 <span class="tag secondary">UI</span>
             </div>
-            <p>Action game con combat system veloce e responsivo.</p>
+
+            <p>
+                Action-focused game featuring fast combat mechanics and responsive controls.
+            </p>
         </div>
 
         <div class="card">
-            <h3>Project Two</h3>
-            <video controls>
-                <source src="video2.mp4" type="video/mp4">
-            </video>
-            <div>
-                <span class="tag">Unreal</span>
+            <h3>Project Name: Echo Level Prototype</h3>
+
+            <div class="video-wrapper">
+                <video controls>
+                    <source src="video2.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="meta-block">
+                <div class="meta-title">Tools</div>
+                <span class="tag">Unreal Engine</span>
                 <span class="tag">Blueprint</span>
+            </div>
+
+            <div class="meta-block">
+                <div class="meta-title">Ownership</div>
                 <span class="tag secondary">Level Design</span>
             </div>
-            <p>Prototype focalizzato su level design e narrativa.</p>
+
+            <p>
+                Prototype focused on environmental storytelling and level design exploration.
+            </p>
         </div>
 
     </div>
 </section>
 
 <script>
-console.log("Background refined and subtle");
+console.log("Portfolio layout updated: full-width cards + structured metadata");
 </script>
 
 </body>
